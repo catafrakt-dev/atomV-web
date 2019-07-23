@@ -1,0 +1,16 @@
+version: '3.7'
+
+services:
+
+  atom_v:
+    container_name: atom_v
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - '.:/atomV'
+      - '/atomV/node_modules'
+    ports:
+      - '3001:3000'
+    environment:
+      - NODE_ENV=development
